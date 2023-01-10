@@ -43,11 +43,13 @@ require('packer').startup(function(use)
   -- colorscheme
   use 'navarasu/onedark.nvim' -- Theme inspired by Atom
   
-  -- file explorer
-  use("nvim-tree/nvim-tree.lua")
-
-  -- vs-code like icons
-  use("nvim-tree/nvim-web-devicons")
+  use { -- a file explorer
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons(vscode like icons)
+    },
+    tag = 'nightly' -- optional, updated every week. (see issue #1193)
+  }
 
   -- statusline
   use("nvim-lualine/lualine.nvim")
